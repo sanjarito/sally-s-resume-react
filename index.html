@@ -19,21 +19,85 @@
   crossorigin>
 </script>
 <script type="text/babel">
+
+
   function App(props) {
     return (
-      <header>
-        {props.children}
-      </header>
+    <React.Fragment>
+    <header>
+    {props.children}
+    </header>
+    <main>
+
+        <div id="main-title">
+        <h1 className="center-align" lang="en"> This is {props.name} resume website</h1>
+        </div>
+
+        <section id="education">
+       <h2> EDUCATION </h2>
+       <ul>
+         <li> Indiana University - New Media Arts and Science BA 2019 </li>
+       </ul>
+       </section>
+
+       <section id="employment">
+        <h2> EMPLOYMENT </h2>
+        <ul>
+          <b>/ Pixfizz /</b>  <i> Web Developer and Support Specialist /</i> 04/1/2016 - 04/1/2018 /
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+
+          <b>/ Fusion Academy /</b>  <i> Computer Science Teacher /</i> 04/1/2014 - 04/1/2016 /
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scenario.</p>
+        </ul>
+
+      </section>
+
+      <section id="address">
+        <h2>CONTACT</h2>
+          <address>
+
+            <ul id="contact-list">
+                <li>Name: Sally Sue</li>
+                <li>Email: <a href="mailto:santiago@nowhereprod.com"  >Santiago@nowhereprod.com</a></li>
+                <li>Phone Number: <a href="tel:555-555-5555">555-555-5555</a></li>
+
+              <li className="headshot-contact"><img width="150px" height="205px" alt="Sally Sue Headshot Photograph" src={`https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg`}/></li>
+            </ul>
+        </address>
+    </section>
+
+    </main>
+    </React.Fragment>
     );
   }
 
-  // Nested elements inside the App.
+  const person = {
+  student_name:'Hercules'
+};
+
   ReactDOM.render(
     <App className='my-class'>
       <h1>Current Page Title!</h1>
-    </App>,
+
+    </App>
+    ,
     document.querySelector('#application-root')
   );
+
+  ReactDOM.render(
+  <App
+    name={person.student_name}
+
+  />,
+  document.querySelector('#application-root')
+);
+
+
+
+
+
+
+
 
 </script>
 
